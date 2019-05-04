@@ -1,3 +1,3 @@
 export function greetings(name) {
-  return 'dai ' + ' ta craque no react?'
+  return 'dai ' + name + ' ta craque no react?'
 }
