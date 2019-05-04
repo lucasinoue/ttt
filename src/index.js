@@ -1,4 +1,3 @@
-export function calc({ percent = 100, amount }) {
-  const percentOff = (percent/100) * amount
-  return percentOff
+export function greetings(name) {
+  return 'dai ' + ' ta craque no react?'
 }
