@@ -1,4 +1,4 @@
-export default class Position {
+class Position {
   constructor(x, y, hasValue, value) {
     this.x = x
     this.y = y
@@ -14,5 +14,6 @@ export default class Position {
       this.hasValue = true
     }
   }
-
 }
+
+export default Position
