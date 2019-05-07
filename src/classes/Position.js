@@ -4,6 +4,7 @@ class Position {
     this.y = y
     this.hasValue = hasValue
     this.value = value
+    this.stringPosition = `${x},${y}`
   }
 
   setValue(value) {
@@ -13,6 +14,10 @@ class Position {
       this.value = value
       this.hasValue = true
     }
+  }
+
+  canSetValue() {
+    return !this.hasValue
   }
 }
 

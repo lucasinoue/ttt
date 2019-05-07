@@ -6,8 +6,8 @@ class TicTacToe {
     this.id = id
     this.players = players
     this.priority = priority
-
-    this.board = this.init()
+    this.board = []
+    this.init()
 
     this.winConditions = [
       ['0,0', '0,1', '0,2'],
@@ -22,15 +22,32 @@ class TicTacToe {
   }
 
   init() {
-    const tictac = []
-
     for (let i = 0; i < 3; i += 1) {
       for (let j = 0; j < 3; j += 1) {
-        tictac.push(new Position(i, j, false, null))
+        this.board.push(new Position(i, j, false, null))
       }
     }
+  }
 
-    return tictac
+  setValue(x, y, value) {
+    const position = this.board.find(el => el.x === x && el.y === y)
+    try {
+      if (position.canSetValue()) {
+        position.setValue(value)
+        this.isWinner(value)
+      }
+    } catch (e) {
+      throw new Error(e)
+    }
+  }
+
+  isWinner(value) {
+    // pega todo os itens preenchidos com o valor X ou O
+    const items = this.board.filter(el => el.value === value).map(el => el.stringPosition)
+
+    return this.winConditions.some(winC => {
+      return winC.every(it => items.some(item => item === it))
+    })
   }
 }
 

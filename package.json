@@ -1,6 +1,6 @@
 {
   "name": "tw-ttt",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "Regras do jogo da velha",
   "main": "./dist/index.js",
   "license": "MIT",
